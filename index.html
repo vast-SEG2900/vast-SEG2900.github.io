@@ -1,53 +1,67 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vast - Home</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
+    <head>
+        <title>VAST</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Site Header / Navigation -->
-  <header>
-    <div class="wrap nav">
-      <div class="logo">Vast</div>
-      <ul>
-        <li><a href="features.html">Product</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
-    </div>
-  </header>
+        <script src="assets/js/tailwind.min.js"></script>
 
-  <!-- Hero Section -->
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <h1>Vast Visions — AR Glasses</h1>
-        <p class="lead">Lightweight augmented reality for everyday work and play.</p>
-        <a class="btn primary" href="pricing.html">See pricing</a>
-      </div>
-    </section>
+        <script language="javascript">
+            function menu() {
+                const el = document.getElementById('menu-mobile');
+                el.classList.toggle('hidden');
+            }
+        </script>
+    </head>
+    <body class="bg-neutral-800 text-white">
+        <header class="flex justify-between items-center p-4 border border-white/10 bg-black/10 rounded-full max-w-xl mx-auto absolute inset-x-0 top-8 z-[999]">
+            <div class="">
+                <p class="font-extrabold  px-2 italic text-xl">
+                    VAST
+                </p>
+            </div>
 
-    <!-- Quick About Overview -->
-    <section>
-      <div class="wrap">
-        <h2>About Vast</h2>
-        <p>Vast builds human-first spatial computing. Our mission is to make AR useful, comfortable, and private by design.</p>
-        <a class="btn" href="team.html">Meet our team</a>
-      </div>
-    </section>
-  </main>
+            <nav class="hidden sm:flex space-x-8">
+                <a href="index.html" class="text-cyan-500 font-medium">Home</a>
+                <a href="features.html" class="hover:text-cyan-500 font-medium">Features</a>
+                <a href="pricing.html" class="hover:text-cyan-500 font-medium">Pricing</a>
+                <a href="team.html" class="hover:text-cyan-500 font-medium">Team</a>
+            </nav>
 
-  <!-- Footer -->
-  <footer>
-    <div class="wrap">
-      <p>© 2025 Vast Inc. All rights reserved.</p>
-    </div>
-  </footer>
+            <div class="flex item-center gap-x-4">
+                <button class="sm:hidden" onClick="menu();">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+                </button>
 
-  <script src="js/main.js"></script>
-</body>
+                <div>
+                    <a href="pricing.html" class=" button text-black bg-cyan-500 px-4 py-2 rounded-full hover:bg-cyan-400  font-semibold">
+                        Buy Now
+                    </a>
+                </div>
+            </div>
+
+            <div id="menu-mobile" class="hidden flex flex-col gap-y-4 absolute top-16 left-0 w-full items-center bg-black/80 py-8">
+                <a href="index.html" class="text-cyan-500 font-medium">Home</a>
+                <a href="features.html" class="hover:text-cyan-500 font-medium">Features</a>
+                <a href="pricing.html" class="hover:text-cyan-500 font-medium">Pricing</a>
+                <a href="team.html" class="hover:text-cyan-500 font-medium">Team</a>
+            </div>
+
+        </header>
+
+        <main>
+            <section class="relative w-full h-screen flex justify-center items-center bg-black overflow-hidden ">
+                <div class="absolute h-full w-full flex  justify-center items-start mt-64 sm:mt-128 px-4">
+                    <h1 class="text-6xl sm:text-7xl font-bold text-white/75 uppercase text-center">See Beyond Vision</h1>
+                </div>
+                <img src="assets/images/hero.png"  alt="Hero Image"  class="w-full h-full object-cover hidden sm:flex" />
+                <img src="assets/images/hero-mobile.png"  alt="Hero Image"  class="w-full h-full object-cover sm:hidden" />
+                <div class="absolute h-full w-full flex justify-center items-end mb-16 sm:mb-64 z-99 px-4 flex ">
+                    <h2 class="text-xl sm:text-2xl text-center text-white/50 uppercase">Step into a seamless fusion of real and digital worlds. Experience the VASTness of vision <br/>as it redefine how you <span class="text-white">see</span>, <span class="text-white">think</span>, and <span class="text-white">experience technology</span>.</h2>
+                </div>
+            </section>
+        </main>
+
+    </body>
 </html>
