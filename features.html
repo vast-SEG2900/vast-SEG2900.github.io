@@ -1,47 +1,159 @@
-<!-- features.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vast - Product Features</title>
-    <link rel="stylesheet" href="assets/css/style.css"/>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Features</title>
 
-<!-- Header -->
-<header>
-    <div class="wrap nav">
-        <div class="logo">Vast</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="features.html">Features</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="team.html">Team</a></li>
-        </ul>
+    <script src="assets/js/tailwind.min.js"></script>
+    <script language="javascript" src="assets/js/main.js"></script>
+</head>
+
+<body class="bg-black text-white">
+<header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
+    <div>
+        <a href="index.html" class="font-extrabold px-2 italic text-xl text-cyan-300 hover:text-cyan-200">
+            VAST
+        </a>
+    </div>
+
+    <nav class="hidden sm:flex space-x-8">
+        <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
+        <a href="features.html" class="text-cyan-400 font-semibold hover:text-cyan-200">Features</a>
+        <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
+        <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
+    </nav>
+
+    <div class="flex item-center gap-x-4">
+        <button class="sm:hidden" onClick="menu();">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor"
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300">
+                <path d="M4 5h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 19h16"/>
+            </svg>
+        </button>
+
+        <div>
+            <a href="pricing.html"
+               class="button text-black bg-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-300 font-semibold shadow-lg shadow-cyan-400/40">
+                Buy Now
+            </a>
+        </div>
+    </div>
+
+    <div id="menu-mobile"
+         class="hidden flex flex-col gap-y-4 absolute top-16 left-0 w-full items-center bg-black/80 py-8">
+        <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
+        <a href="features.html" class="text-cyan-400 font-medium">Features</a>
+        <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
+        <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
     </div>
 </header>
 
-<!-- Product Features Section -->
-<main>
-    <section class="wrap">
-        <h1>Product Features</h1>
-        <p>Vast Visions are sleek AR glasses that overlay apps, navigation, and calls directly into your field of view.
-            Works with iOS, Android, macOS, and Windows.</p>
-        <div class="cards">
-            <div class="card"><strong>Display:</strong> micro-OLED, 55° FOV</div>
-            <div class="card"><strong>Input:</strong> voice, eye-tracking, pinch</div>
-            <div class="card"><strong>Audio:</strong> open-ear + beamforming mics</div>
+
+<main class="mt-40 w-full mx-auto px-4 sm:px-0">
+    <div class="flex flex-col items-center text-center max-w-xl mx-auto">
+        <h1 class="text-6xl sm:text-7xl font-bold text-[##e0f2fe]">Features</h1>
+        <p class="pt-8">Discover how VAST Visions blends technology and comfort to redefine what’s possible with AR eyewear.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12 text-white px-6">
+
+        <!-- 1 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="eye-off" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Discreet & Stylish Design</p>
+                <p class="text-white/70">Sleek and minimal, VAST looks just like regular glasses, no bulky frames or visible cameras.</p>
+            </div>
         </div>
-    </section>
+
+        <!-- 2 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="volume-2" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Smart Assistance for the Visually Impaired</p>
+                <p class="text-white/70">Real-time navigation with voice cues, vibration feedback, and text to speech capabilities.</p>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="radar" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Environmental Awareness & Obstacle Detection</p>
+                <p class="text-white/70">Recognizes objects, detects obstacles, and identifies traffic lights to enhance mobility and safety.</p>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="users" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Useful for Everyone</p>
+                <p class="text-white/70">From productivity and learning to travel and accessibility. VAST adapts to every lifestyle.</p>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="feather" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Ultra-Lightweight Comfort</p>
+                <p class="text-white/70">Engineered with advanced materials for a perfectly balanced and comfortable fit all day.</p>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="wallet" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Affordable & Inclusive</p>
+                <p class="text-white/70">High-end AR innovation made accessible, because technology should empower everyone.</p>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="monitor" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Transparent Contextual Display</p>
+                <p class="text-white/70">Seamlessly overlays useful data: navigation, translation, or notifications, right in your field of view.</p>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="flex space-x-4 items-start">
+            <div>
+                <i data-lucide="wifi" class="w-6 h-6 text-cyan-400 mt-1"></i>
+            </div>
+            <div class="flex flex-col space-y-1">
+                <p class="font-semibold text-lg">Universal Connectivity</p>
+                <p class="text-white/70">Connects effortlessly with your phone, voice assistant, and health apps for a fully integrated experience.</p>
+            </div>
+        </div>
+    </div>
 </main>
 
-<!-- Footer -->
-<footer>
-    <div class="wrap">
-        <p>© 2025 Vast Inc. All rights reserved.</p>
-    </div>
-</footer>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    lucide.createIcons();
+</script>
 
 </body>
 </html>

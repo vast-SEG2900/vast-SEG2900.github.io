@@ -1,252 +1,52 @@
+<!-- pricing.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Features & Pricing</title>
+  <title>Pricing</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #03080a;
-      color: #e0f7ff;
-      overflow-x: hidden;
-    }
-
-    /* === HEADER === */
-    header {
-      position: fixed;
-      top: 2rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      max-width: 700px;
-      padding: 0.8rem 1.2rem;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      border-radius: 9999px;
-      background-color: rgba(0, 100, 150, 0.1);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-style: italic;
-      font-size: 1.25rem;
-      color: #00FFFF;
-    }
-
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #67e8f9;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav a.active {
-      color: #a5f3fc;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: #bae6fd;
-    }
-
-    .buy-btn {
-      background-color: #22d3ee;
-      color: #000;
-      padding: 0.5rem 1rem;
-      border-radius: 9999px;
-      font-weight: 600;
-      box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .buy-btn:hover {
-      background-color: #67e8f9;
-    }
-
-    /* === MAIN SECTION === */
-    .main-section {
-      padding: 10rem 1.5rem 5rem;
-      text-align: center;
-      position: relative;
-      background-color: #03080a;
-    }
-
-    /* Background gradient blob */
-    .main-section::before {
-      content: '';
-      position: absolute;
-      top: -3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1155px;
-      height: 678px;
-      background: linear-gradient(to top right, #22d3ee, #1e3a8a);
-      opacity: 0.3;
-      filter: blur(80px);
-      clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);
-      z-index: -1;
-    }
-
-    .main-section h2 {
-      color: #22d3ee;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-    }
-
-    .main-section h1 {
-      font-size: 3rem;
-      font-weight: 600;
-      color: #e0f2fe;
-      margin-top: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .main-section h1 {
-        font-size: 4rem;
-      }
-    }
-
-    .main-section p.description {
-      max-width: 600px;
-      margin: 1.5rem auto 0;
-      font-size: 1.1rem;
-      color: rgba(165, 243, 252, 0.8);
-      line-height: 1.8;
-    }
-
-    /* === PRICING CARDS === */
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 4rem auto 0;
-    }
-
-    @media (min-width: 768px) {
-      .pricing-cards {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    .card {
-      border-radius: 24px;
-      padding: 2rem;
-      border: 1px solid rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .card:hover {
-      border-color: rgba(34, 211, 238, 0.4);
-    }
-
-    .card.light {
-      background-color: rgba(0, 188, 212, 0.15);
-    }
-
-    .card.dark {
-      background-color: rgba(0, 188, 212, 0.25);
-      box-shadow: 0 0 25px rgba(34, 211, 238, 0.25);
-    }
-
-    .card h3 {
-      color: #67e8f9;
-      font-weight: 600;
-      font-size: 1.1rem;
-    }
-
-    .price {
-      margin-top: 1rem;
-      font-size: 3rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .card p.subtitle {
-      color: rgba(165, 243, 252, 0.9);
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-    }
-
-    .card ul {
-      list-style: none;
-      margin-top: 1.5rem;
-      color: #a5f3fc;
-      text-align: left;
-      font-size: 0.9rem;
-    }
-
-    .card ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    .card a.btn {
-      display: block;
-      text-align: center;
-      margin-top: 2rem;
-      background-color: rgba(34, 211, 238, 0.2);
-      color: #e0f2fe;
-      padding: 0.75rem;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .card a.btn:hover {
-      background-color: rgba(34, 211, 238, 0.4);
-    }
-
-    .card.dark a.btn {
-      background-color: #22d3ee;
-      color: #000;
-      box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
-    }
-
-    .card.dark a.btn:hover {
-      background-color: #67e8f9;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="assets/css/pricing.css" />
+  <script src="assets/js/tailwind.min.js"></script>
+  <script language="javascript" src="assets/js/main.js"></script>
 </head>
 
-<body>
+<body class="bg-black text-white">
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">VAST</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="features.html" class="active">Features</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="team.html">Team</a>
+  <header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
+    <div>
+      <a href="index.html" class="font-extrabold px-2 italic text-xl text-cyan-300 hover:text-cyan-200">
+        VAST
+      </a>
+    </div>
+
+    <nav class="hidden sm:flex space-x-8">
+      <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
+      <a href="features.html" class="hover:text-cyan-300 font-medium">Features</a>
+      <a href="pricing.html" class="text-cyan-400 font-semibold hover:text-cyan-200">Pricing</a>
+      <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
     </nav>
-    <a href="pricing.html" class="buy-btn">Buy Now</a>
+
+    <div class="flex item-center gap-x-4">
+      <button class="sm:hidden" onClick="menu();">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+
+      <div>
+        <a href="pricing.html" class="button text-black bg-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-300 font-semibold shadow-lg shadow-cyan-400/40">
+          Buy Now
+        </a>
+      </div>
+    </div>
+
+    <div id="menu-mobile" class="hidden flex flex-col gap-y-4 absolute top-16 left-0 w-full items-center bg-black/80 py-8">
+      <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
+      <a href="features.html" class="hover:text-cyan-300 font-medium">Features</a>
+      <a href="pricing.html" class="text-cyan-400 font-medium">Pricing</a>
+      <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
+    </div>
   </header>
 
-  <!-- MAIN SECTION -->
   <section class="main-section">
     <h2>Pricing</h2>
     <h1>Shop Your Vision</h1>
@@ -255,7 +55,6 @@
     </p>
 
     <div class="pricing-cards">
-      <!-- Vision 1 -->
       <div class="card light">
         <h3>Vision 1</h3>
         <p class="price">$449</p>
@@ -268,10 +67,9 @@
           <li>✔️ Built-in voice assistant control</li>
           <li>✔️ Up to 8 hours of battery life</li>
         </ul>
-        <a href="#" class="btn">Get started today</a>
+        <a href="#" class="btn">Add to Cart</a>
       </div>
 
-      <!-- Vision 1 Pro -->
       <div class="card dark">
         <h3>Vision 1 Pro</h3>
         <p class="price">$599</p>
@@ -279,14 +77,14 @@
           Advanced design for those who see deeper into the future.
         </p>
         <ul>
-          <li>✔️ Unlimited products</li>
+          <li>✔️ Same features as Vision 1</li>
           <li>✔️ High-resolution AR display and faster processing</li>
           <li>✔️ Gesture and eye-tracking control</li>
           <li>✔️ Seamless social sharing and smart notifications</li>
           <li>✔️ Extended 12-hour battery life</li>
           <li>✔️ Premium AR app suite with new experiences</li>
         </ul>
-        <a href="#" class="btn">Get started today</a>
+        <a href="#" class="btn">Add to Cart</a>
       </div>
     </div>
   </section>

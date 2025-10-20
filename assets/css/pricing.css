@@ -1,0 +1,125 @@
+.main-section {
+    padding: 10rem 1.5rem 5rem;
+    text-align: center;
+    position: relative;
+}
+
+.main-section h2 {
+    color: #22d3ee;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.main-section h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #e0f2fe;
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .main-section h1 {
+        font-size: 4rem;
+    }
+}
+
+.main-section p.description {
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    font-size: 1.1rem;
+    color: rgba(165, 243, 252, 0.8);
+    line-height: 1.8;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 4rem auto 0;
+}
+
+@media (min-width: 768px) {
+    .pricing-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card {
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+}
+
+.card.light {
+    background-color: rgba(0, 188, 212, 0.15);
+}
+
+.card.dark {
+    background-color: rgba(0, 188, 212, 0.25);
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.25);
+}
+
+.card h3 {
+    color: #67e8f9;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.price {
+    margin-top: 1rem;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.card p.subtitle {
+    color: rgba(165, 243, 252, 0.9);
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.card ul {
+    list-style: none;
+    margin-top: 1.5rem;
+    color: #a5f3fc;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.card ul li {
+    margin-bottom: 0.5rem;
+}
+
+.card a.btn {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    background-color: rgba(34, 211, 238, 0.2);
+    color: #e0f2fe;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.card a.btn:hover {
+    background-color: rgba(34, 211, 238, 0.4);
+}
+
+.card.dark a.btn {
+    background-color: #22d3ee;
+    color: #000;
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+}
+
+.card.dark a.btn:hover {
+    background-color: #67e8f9;
+}
