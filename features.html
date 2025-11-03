@@ -6,7 +6,7 @@
     <title>Features</title>
 
     <script src="assets/js/tailwind.min.js"></script>
-    <script language="javascript" src="assets/js/main.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body class="bg-black text-white">
@@ -54,14 +54,14 @@
 
 <main class="mt-40 w-full mx-auto px-4 sm:px-0">
     <div class="flex flex-col items-center text-center max-w-xl mx-auto">
-        <h1 class="text-6xl sm:text-7xl font-bold text-[##e0f2fe]">Features</h1>
+        <h1 class="text-6xl sm:text-7xl font-bold text-[#e0f2fe]">Features</h1>
         <p class="pt-8">Discover how VAST Visions blends technology and comfort to redefine what’s possible with AR eyewear.</p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12 text-white px-6">
 
         <!-- 1 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="eye-off" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -72,7 +72,7 @@
         </div>
 
         <!-- 2 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="volume-2" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -83,7 +83,7 @@
         </div>
 
         <!-- 3 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="radar" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -94,7 +94,7 @@
         </div>
 
         <!-- 4 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="users" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -105,7 +105,7 @@
         </div>
 
         <!-- 5 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="feather" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -116,7 +116,7 @@
         </div>
 
         <!-- 6 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="wallet" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -127,7 +127,7 @@
         </div>
 
         <!-- 7 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="monitor" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -138,7 +138,7 @@
         </div>
 
         <!-- 8 -->
-        <div class="flex space-x-4 items-start">
+        <div class="feature-card flex space-x-4 items-start p-4 rounded-lg transition-transform duration-300">
             <div>
                 <i data-lucide="wifi" class="w-6 h-6 text-cyan-400 mt-1"></i>
             </div>
@@ -150,10 +150,8 @@
     </div>
 </main>
 
-<script src="https://unpkg.com/lucide@latest"></script>
-<script>
-    lucide.createIcons();
-</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/features.js" defer></script>
 
 </body>
 </html>
