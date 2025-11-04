@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>VAST Visions — Help & User Aid Center</title>
+  <style>
+
+    :root{
+      --bg:#0f1724; --card:#111827; --muted:#9ca3af; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --maxw:980px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;background:linear-gradient(180deg,#071026 0%, #081022 40%, #071428 100%);color:#e6eef6;line-height:1.45}
+    .wrap{max-width:var(--maxw);margin:36px auto;padding:24px}
+
+    header{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+    .logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),#7c3aed);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:20px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr} .aside{order:2}}
+
+    /* FAQ card */
+    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));border-radius:var(--radius);padding:18px;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
+    .faq-list{list-style:none;margin:0;padding:0}
+    .faq{border-radius:10px;background:var(--glass);padding:12px;margin-bottom:10px;cursor:pointer;transition:all .18s ease}
+    .faq:hover{transform:translateY(-4px)}
+    .q{display:flex;justify-content:space-between;align-items:center}
+    .q strong{font-weight:600}
+    .a{margin-top:10px;color:var(--muted);display:none}
+    .faq.open .a{display:block}
+
+    /* Search & mini-chat */
+    .controls{display:flex;gap:10px;margin-bottom:14px}
+    .search{flex:1;display:flex}
+    input[type="search"], input[type="text"], textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button.btn{background:var(--accent);border:0;padding:10px 14px;border-radius:8px;color:#04202a;font-weight:600;cursor:pointer}
+    button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+    /* Chat area */
+    .chat{height:360px;overflow:auto;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .msg{margin-bottom:12px;display:flex}
+    .msg.user{justify-content:flex-end}
+    .bubble{max-width:72%;padding:10px 12px;border-radius:12px;background:#0b1220}
+    .bubble.user{background:#062c31;color:#dffafb}
+
+    /* Contact form */
+    label{display:block;font-size:13px;margin-top:10px;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+    footer.note{margin-top:12px;color:var(--muted);font-size:13px}
+
+    /* Responsive tweaks */
+    @media (max-width:560px){.chat{height:260px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">V</div>
+      <div>
+        <h1>VAST Visions — User Aid & Help Centre</h1>
+        <p class="lead">Quick answers, searchable FAQs, and a contact form that will forward questions to your VAST team.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card" aria-labelledby="faq-heading">
+          <h2 id="faq-heading">Frequently Asked Questions</h2>
+          <p class="small">Click any question to reveal a short answer. Use the search box to filter.</p>
+
+          <div class="controls">
+            <div class="search">
+              <input id="searchFaq" type="search" placeholder="Search FAQ (try: battery, warranty, shipping)" aria-label="Search FAQs" />
+            </div>
+            <button class="ghost" id="resetSearch">Reset</button>
+          </div>
+
+          <ul id="faqList" class="faq-list" role="list">
+            <!-- FAQ items will be injected by JavaScript for easy editing -->
+          </ul>
+        </section>
+
+        <section class="card" style="margin-top:16px">
+          <h3>Quick assistant — ask a question</h3>
+          <p class="small">Type your question below. The assistant will try to answer from the FAQ. If it can't, you can forward the question to the VAST team with one click.</p>
+
+          <div class="chat" id="chatWindow" aria-live="polite"></div>
+
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <input id="chatInput" type="text" placeholder="Start your question (e.g. "How long is the warranty?")" />
+            <button class="btn" id="askBtn">Ask</button>
+            <button class="ghost" id="emailBtn">Send to VAST</button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="aside">
+        <div class="card">
+          <h3>Contact VAST Visions</h3>
+          <p class="small">If the assistant can't answer, use the form below to create an email to your team. Replace <code>support@vastvisions.org</code> with your organization address in the source code.</p>
+
+          <label for="name">Your name</label>
+          <input id="name" type="text" placeholder="Your name" />
+
+          <label for="email">Your email</label>
+          <input id="email" type="text" placeholder="you@example.com" />
+
+          <label for="subject">Subject</label>
+          <input id="subject" type="text" placeholder="Short subject" />
+
+          <label for="message">Message</label>
+          <textarea id="message" rows="6" placeholder="Type your message here"></textarea>
+
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button class="btn" id="sendMail">Open email client</button>
+            <button class="ghost" id="clearForm">Clear</button>
+          </div>
+
+          <footer class="note">Note: This uses <code>mailto:</code> so the user's email client will open. If you prefer server-side emailing, replace the mailto flow with an API call to your backend endpoint (example: <code>/api/send</code>).</footer>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h4>Support hours</h4>
+          <p class="small">Mon — Fri, 9:00 — 17:00 (local time). For classroom/demo issues, mark the subject with "URGENT".</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // ======= Configuration =======
+    // Edit these values to match your organization before copying to GitHub Codespaces.
+    const VAST_EMAILS = ['support@vastvisions.org','team@vastvisions.org']; // recipients for mailto fallback
+
+    // Predefined FAQ data (10 questions and answers) — easy to edit
+    const FAQ_DATA = [
+      {q: 'What warranty comes with the glasses?', a: 'All classroom/demo units include a 1-year limited warranty covering manufacturing defects. Accidental damage (drops, liquids) is not covered.'},
+      {q: 'How do I get a prescription lens added?', a: 'We support prescription inserts for the demo models. Bring a copy of the prescription and contact the team via the contact form; we will arrange fitting instructions.'},
+      {q: 'How long does the battery last?', a: 'Typical battery life is 6-8 hours of mixed use. Battery life varies with brightness and continuous use of augmented features.'},
+      {q: 'What is your return and refund policy?', a: 'Classroom demo units cannot be returned. Consumer orders made via the Buy page are eligible for a 30-day return if unopened. Contact support for exceptions.'},
+      {q: 'Which devices and OS are supported?', a: 'Our software supports Windows 10+, macOS 11+, Android 11+, and iOS 14+. Some features may be limited on older OS versions.'},
+      {q: 'How do I clean and maintain the glasses?', a: 'Use a microfiber cloth for lenses and a soft damp cloth for frames. Avoid alcohol or harsh solvents on lens coatings.'},
+      {q: 'Is my data private and secure?', a: 'We store only the minimum telemetry required to diagnose issues. We do not sell user data. See our privacy policy for details.'},
+      {q: 'Can I use these glasses for live classroom streaming?', a: 'Yes — the glasses support streaming with compatible apps. Check the streaming guide on the Features page for setup steps.'},
+      {q: 'How long does shipping take?', a: 'Shipping for classroom/demo units within the same country is typically 3–7 business days. International shipping varies by carrier.'},
+      {q: 'Who do I contact during the software engineering class if something fails?', a: 'Use the "Send to VAST" button in this page and mark the subject "URGENT: Class Demo" so team members can prioritize the response.'}
+    ];
+
+    // ======= UI wiring =======
+    const faqList = document.getElementById('faqList');
+    const searchFaq = document.getElementById('searchFaq');
+    const resetSearch = document.getElementById('resetSearch');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatInput = document.getElementById('chatInput');
+    const askBtn = document.getElementById('askBtn');
+    const emailBtn = document.getElementById('emailBtn');
+
+    // Render FAQs
+    function renderFaqs(filter = ''){
+      faqList.innerHTML = '';
+      const query = filter.trim().toLowerCase();
+      FAQ_DATA.filter(item => item.q.toLowerCase().includes(query) || item.a.toLowerCase().includes(query))
+        .forEach((item, idx) => {
+          const li = document.createElement('li');
+          li.className = 'faq';
+          li.innerHTML = `
+            <div class="q" role="button" tabindex="0">
+              <strong>${item.q}</strong>
+              <span aria-hidden>+</span>
+            </div>
+            <div class="a"><p>${item.a}</p></div>
+          `;
+          li.querySelector('.q').addEventListener('click', () => li.classList.toggle('open'));
+          li.querySelector('.q').addEventListener('keydown', (e)=>{ if(e.key==='Enter') li.classList.toggle('open') });
+          faqList.appendChild(li);
+        });
+
+      if(faqList.children.length === 0){
+        faqList.innerHTML = '<li class="small">No FAQs matched your search.</li>';
+      }
+    }
+
+    renderFaqs();
+
+    searchFaq.addEventListener('input', ()=> renderFaqs(searchFaq.value));
+    resetSearch.addEventListener('click', ()=>{ searchFaq.value=''; renderFaqs(); searchFaq.focus(); });
+
+    // Simple assistant: find best matching FAQ by keywords
+    function assistantAnswer(question){
+      const q = question.toLowerCase();
+      // first try exact phrase matches
+      for(const item of FAQ_DATA){
+        if(q.includes(item.q.toLowerCase())) return item.a;
+      }
+      // keyword matching: map keywords to FAQ indices
+      const keywords = {
+        'warrant': 0, 'warranty':0, 'prescription':1, 'rx':1, 'battery':2, 'return':3, 'refund':3, 'os':4, 'android':4, 'ios':4, 'clean':5, 'privacy':6, 'data':6, 'stream':7, 'streaming':7, 'shipping':8, 'ship':8, 'urgent':9
+      };
+      for(const k in keywords){ if(q.includes(k)) return FAQ_DATA[keywords[k]].a; }
+      // fallback
+      return null;
+    }
+
+    function appendMessage(text, who='assistant'){
+      const div = document.createElement('div');
+      div.className = 'msg ' + (who==='user' ? 'user' : '');
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble ' + (who==='user' ? 'user' : '');
+      bubble.textContent = text;
+      div.appendChild(bubble);
+      chatWindow.appendChild(div);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    askBtn.addEventListener('click', ()=>{
+      const question = chatInput.value.trim();
+      if(!question) return;
+      appendMessage(question, 'user');
+      const ans = assistantAnswer(question);
+      if(ans){ appendMessage(ans, 'assistant') }
+      else{ appendMessage('I don\'t have an exact answer. Click "Send to VAST" to email your question to the team and they will reply by email.', 'assistant') }
+      chatInput.value='';
+      chatInput.focus();
+    });
+
+    chatInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter') askBtn.click(); });
+
+    // Email button in chat: opens mail client and pre-fills a message including the question
+    emailBtn.addEventListener('click', ()=>{
+      // find the last user message to include
+      const lastUser = [...chatWindow.querySelectorAll('.msg.user .bubble')].pop();
+      const question = lastUser ? lastUser.textContent : chatInput.value || '';
+      const subject = encodeURIComponent('Support request from Help Centre');
+      const bodyLines = [
+        'Hello VAST team,',
+        '',
+        'A user submitted the following question via the Help Centre:',
+        question,
+        '',
+        '--- Please reply to the user directly. ---'
+      ];
+      const body = encodeURIComponent(bodyLines.join('\n'));
+      const mailto = `mailto:${VAST_EMAILS.join(',') }?subject=${subject}&body=${body}`;
+      window.location.href = mailto;
+    });
+
+    // Contact form (aside) — prefill mailto and open email client
+    const sendMail = document.getElementById('sendMail');
+    const clearForm = document.getElementById('clearForm');
+    sendMail.addEventListener('click', ()=>{
+      const name = document.getElementById('name').value.trim();
+      const from = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim() || 'Help centre inquiry';
+      const message = document.getElementById('message').value.trim();
+      if(!from || !message){ alert('Please include your email and a short message before sending.'); return; }
+      const body = encodeURIComponent(`From: ${name} (${from})\n\n${message}`);
+      const mailto = `mailto:${VAST_EMAILS.join(',')}?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+    });
+    clearForm.addEventListener('click', ()=>{ document.getElementById('name').value=''; document.getElementById('email').value=''; document.getElementById('subject').value=''; document.getElementById('message').value=''; });
+
+    // Optional: If you'd rather have a server endpoint, replace the mailto flow above with a fetch to your API:
+    /*
+    sendMail.addEventListener('click', async ()=>{
+      const payload = { name, from, subject, message };
+      await fetch('/api/send', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+      alert('Message sent');
+    });
+    */
+
+    // Accessibility: allow focus outlines when using keyboard
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Tab') document.body.classList.add('show-focus') });
+  </script>
+</body>
+</html>
