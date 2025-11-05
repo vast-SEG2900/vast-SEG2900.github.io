@@ -1,0 +1,19 @@
+Style Guideline
+---------------
+
+Color Theme:
+The colour scheme of our website will include:
+-Black and dark shade for the background.
+-Glowing shades blue and emerald
+-White for words
+-Hints of purple for different icons or aspects of every webpage.  
+
+
+Theme of webpage:
+Our website will have a futuristic theme, incorporating dark colours and glow across different pages. This theme will help emphasize our product and company goals.
+
+   
+Typography:
+-Neutral font 
+-Varying sizes for titles, descriptions, and sections.
+ 
