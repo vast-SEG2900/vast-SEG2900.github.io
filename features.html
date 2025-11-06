@@ -10,46 +10,42 @@
 </head>
 
 <body class="bg-black text-white">
-<header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
-    <div>
+    <header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-2xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
+        <div>
         <a href="index.html" class="font-extrabold px-2 italic text-xl text-cyan-300 hover:text-cyan-200">
             VAST
         </a>
-    </div>
-
-    <nav class="hidden sm:flex space-x-8">
-        <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
-        <a href="features.html" class="text-cyan-400 font-semibold hover:text-cyan-200">Features</a>
-        <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
-        <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
-    </nav>
-
-    <div class="flex item-center gap-x-4">
-        <button class="sm:hidden" onClick="menu();">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor"
-                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300">
-                <path d="M4 5h16"/>
-                <path d="M4 12h16"/>
-                <path d="M4 19h16"/>
-            </svg>
-        </button>
-
-        <div>
-            <a href="pricing.html"
-               class="button text-black bg-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-300 font-semibold shadow-lg shadow-cyan-400/40">
-                Buy Now
-            </a>
         </div>
-    </div>
 
-    <div id="menu-mobile"
-         class="hidden flex flex-col gap-y-4 absolute top-16 left-0 w-full items-center bg-black/80 py-8">
-        <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
-        <a href="features.html" class="text-cyan-400 font-medium">Features</a>
-        <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
-        <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
-    </div>
-</header>
+        <nav class="hidden sm:flex space-x-8">
+            <a href="index.html" class="hover:text-cyan-300 font-medium">Home</a>
+            <a href="features.html" class="text-cyan-400 font-semibold hover:text-cyan-200">Features</a>
+            <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
+            <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
+            <a href="help.html" class="hover:text-cyan-300 font-medium">Help</a>
+        </nav>
+
+        <div class="flex item-center gap-x-4">
+            <button class="sm:hidden cursor-pointer" onClick="menu();">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+            </button>
+
+            <div>
+                <a href="pricing.html" class="button text-black bg-cyan-400 px-4 py-2 rounded-full hover:bg-cyan-300 font-semibold shadow-lg shadow-cyan-400/40">
+                    Buy Now
+                </a>
+            </div>
+        </div>
+
+        <div id="menu-mobile" class="hidden flex flex-col gap-y-4 absolute top-16 left-0 w-full items-center bg-black/80 py-8">
+            <a href="index.html" class="text-cyan-500 font-medium">Home</a>
+            <a href="features.html" class="hover:text-cyan-500 font-medium">Features</a>
+            <a href="pricing.html" class="hover:text-cyan-500 font-medium">Pricing</a>
+            <a href="team.html" class="hover:text-cyan-500 font-medium">Team</a>
+            <a href="help.html" class="hover:text-cyan-500 font-medium">Help</a>
+        </div>
+
+    </header>
 
 
 <main class="mt-40 w-full mx-auto px-4 sm:px-0">

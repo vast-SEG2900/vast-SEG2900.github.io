@@ -1,6 +1,3 @@
-// features.js
-
-// Highlight feature card on hover
 const featureCards = document.querySelectorAll('.feature-card');
 
 featureCards.forEach(card => {
@@ -13,5 +10,4 @@ featureCards.forEach(card => {
   });
 });
 
-// Render Lucide icons
 lucide.createIcons();

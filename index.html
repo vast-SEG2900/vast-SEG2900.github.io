@@ -9,7 +9,7 @@
         <script language="javascript" src="assets/js/main.js"></script>
     </head>
     <body class="bg-neutral-800 text-white">
-        <header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
+        <header class="flex justify-between items-center p-4 border border-cyan-400/20 bg-cyan-900/10 rounded-full max-w-2xl mx-auto absolute inset-x-0 top-8 z-[999] backdrop-blur-md">
             <div>
             <a href="index.html" class="font-extrabold px-2 italic text-xl text-cyan-300 hover:text-cyan-200">
                 VAST
@@ -21,11 +21,11 @@
                 <a href="features.html" class="hover:text-cyan-300 font-medium">Features</a>
                 <a href="pricing.html" class="hover:text-cyan-300 font-medium">Pricing</a>
                 <a href="team.html" class="hover:text-cyan-300 font-medium">Team</a>
-                <a href="help.html" class="hover:text-cyan-300 font-medium">Help Center</a>
+                <a href="help.html" class="hover:text-cyan-300 font-medium">Help</a>
             </nav>
 
             <div class="flex item-center gap-x-4">
-                <button class="sm:hidden" onClick="menu();">
+                <button class="sm:hidden cursor-pointer" onClick="menu();">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-300"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
                 </button>
 
@@ -41,7 +41,7 @@
                 <a href="features.html" class="hover:text-cyan-500 font-medium">Features</a>
                 <a href="pricing.html" class="hover:text-cyan-500 font-medium">Pricing</a>
                 <a href="team.html" class="hover:text-cyan-500 font-medium">Team</a>
-                <a href="#help" class="hover:text-cyan-500 font-medium">Help Center</a>
+                <a href="help.html" class="hover:text-cyan-500 font-medium">Help</a>
             </div>
 
         </header>
@@ -57,54 +57,54 @@
                     <h2 class="text-xl sm:text-2xl text-center text-white/50 uppercase">Step into a seamless fusion of real and digital worlds. Experience the VASTness of vision <br/>as it redefine how you <span class="text-white">see</span>, <span class="text-white">think</span>, and <span class="text-white">experience technology</span>.</h2>
                 </div>
             </section>
-            <section id="help" class="py-20 px-6 bg-neutral-900 text-center">
-      <h2 class="text-4xl font-bold text-cyan-400 mb-8">Help Center</h2>
-      <p class="text-white/80 mb-12 max-w-2xl mx-auto">
-        Have questions about our VAST smart glasses? Check out our most common user questions below, or contact us directly.
-      </p>
+            <section id="help" class="py-20 px-6 bg-black text-center">
+            <h2 class="text-4xl font-bold text-cyan-400 mb-8">Help Center</h2>
+            <p class="text-white/80 mb-12 max-w-2xl mx-auto">
+              Have questions about our VAST smart glasses? Check out our most common user questions below, or contact us directly.
+            </p>
 
-      <div class="max-w-3xl mx-auto text-left space-y-6">
-        <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
-          <summary class="font-semibold text-cyan-300 cursor-pointer">How do I connect my VAST glasses to my phone?</summary>
-          <p class="mt-2 text-white/70">Open the VAST app on your smartphone, turn on Bluetooth, and select “VAST Vision” from available devices.</p>
-        </details>
+            <div class="max-w-3xl mx-auto text-left space-y-6">
+              <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
+                <summary class="font-semibold text-cyan-300 cursor-pointer">How do I connect my VAST glasses to my phone?</summary>
+                <p class="mt-2 text-white/70">Open the VAST app on your smartphone, turn on Bluetooth, and select “VAST Vision” from available devices.</p>
+              </details>
 
-        <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
-          <summary class="font-semibold text-cyan-300 cursor-pointer">How long does the battery last?</summary>
-          <p class="mt-2 text-white/70">A full charge lasts up to 8 hours of continuous use, depending on brightness and connectivity.</p>
-        </details>
+              <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
+                <summary class="font-semibold text-cyan-300 cursor-pointer">How long does the battery last?</summary>
+                <p class="mt-2 text-white/70">A full charge lasts up to 8 hours of continuous use, depending on brightness and connectivity.</p>
+              </details>
 
-        <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
-          <summary class="font-semibold text-cyan-300 cursor-pointer">Are the glasses water-resistant?</summary>
-          <p class="mt-2 text-white/70">Yes! VAST glasses are IPX4 rated, meaning they’re resistant to splashes and light rain.</p>
-        </details>
-      </div>
+              <details class="bg-neutral-800 p-6 rounded-2xl shadow-lg">
+                <summary class="font-semibold text-cyan-300 cursor-pointer">Are the glasses water-resistant?</summary>
+                <p class="mt-2 text-white/70">Yes! VAST glasses are IPX4 rated, meaning they’re resistant to splashes and light rain.</p>
+              </details>
+            </div>
 
-      <div class="mt-16">
-        <h3 class="text-2xl font-semibold text-cyan-300 mb-4">Still have a question?</h3>
-        <form action="mailto:vastvisions@gmail.com" method="POST" enctype="text/plain" class="max-w-xl mx-auto space-y-4">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"/>
-          <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"/>
-          <textarea name="message" rows="4" placeholder="Your question..." required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"></textarea>
-          <button type="submit" class="bg-cyan-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 transition">Send Question</button>
-        </form>
-      </div>
-    </section>
-        <footer class="py-10 bg-neutral-950 text-center border-t border-cyan-500/30">
-      <h3 class="text-cyan-400 text-2xl font-semibold mb-4">Created by the VAST Visions Team</h3>
-      <p class="text-white/80 mb-4">Software Engineering Project — 2025</p>
-      <div class="flex flex-wrap justify-center gap-4 text-white/70">
-        <span>Makwekwe, Andrea</span>
-        <span>Soufi, Ryan</span>
-        <span>Salad, Ibrahim</span>
-        <span>Gebara, Mikey</span>
-        <span>Agbolade, Ayoola</span>
-        <span>Rashwan, Kareem</span>
-      </div>
-      <p class="mt-6 text-sm text-white/40">© 2025 VAST Visions. All rights reserved.</p>
-    </footer>
+            <div class="mt-16">
+              <h3 class="text-2xl font-semibold text-cyan-300 mb-4">Still have a question?</h3>
+              <form action="mailto:vastvisions@gmail.com" method="POST" enctype="text/plain" class="max-w-xl mx-auto space-y-4">
+                <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"/>
+                <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"/>
+                <textarea name="message" rows="4" placeholder="Your question..." required class="w-full p-3 rounded-lg bg-neutral-800 border border-cyan-500 text-white"></textarea>
+                <button type="submit" class="bg-cyan-400 text-black font-semibold px-6 py-3 rounded-full hover:bg-cyan-300 transition">Send Question</button>
+              </form>
+            </div>
+          </section>
             
         </main>
 
+        <footer class="py-10 bg-black text-center border-t border-cyan-500/30">
+          <h3 class="text-cyan-400 text-2xl font-semibold mb-4">Created by the VAST Visions Team</h3>
+          <p class="text-white/80 mb-4">Software Engineering Project — 2025</p>
+          <div class="flex flex-wrap justify-center gap-4 text-white/70">
+            <span>Makwekwe, Andrea</span>
+            <span>Soufi, Ryan</span>
+            <span>Salad, Ibrahim</span>
+            <span>Gebara, Mikey</span>
+            <span>Agbolade, Ayoola</span>
+            <span>Rashwan, Kareem</span>
+          </div>
+          <p class="mt-6 text-sm text-white/40">© 2025 VAST Visions. All rights reserved.</p>
+        </footer>
     </body>
 </html>
