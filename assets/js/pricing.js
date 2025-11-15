@@ -4,8 +4,8 @@ function togglePrice() {
     const toggleCircle = document.getElementById("toggleCircle");
 
     if (isYearly) {
-        prices[0].innerHTML = "$499";
-        prices[1].textContent = "$699";
+        prices[0].innerHTML = "$349";
+        prices[1].textContent = "$559";
         toggleCircle.style.transform = "translateX(24px)";
     } else {
         prices[0].innerHTML = "$42 <span class=\"text-sm\">/ month</span>";
